@@ -31,7 +31,6 @@ bool islong(const std::string &str){
 
 bool isdouble(const std::string &str){
     std::string::size_type s;
-    std::cout<<str<<std::endl;
     try{
         std::stod(str, &s);
     }
@@ -48,7 +47,7 @@ std::string parseJson(const std::string &name, const std::string &json) {
     std::string currentValue;
     bool inKey = true;
     bool inString = false;
-    if(json[0] != '{' && json[json.length() - 1] != '}'){
+    if(json.length() != 0 && json[0] != '{' && json[json.length() - 1] != '}'){
         throw std::runtime_error("Invalid Syntax");
     }
     for (char c : json) {
@@ -110,6 +109,10 @@ std::string parseJson(const std::string &name, const std::string &json) {
             throw std::runtime_error("Invalid Syntax");
         }
     }
+    else{
+        throw std::runtime_error("Invalid Syntax");
+    }
+
     std::string res("struct ");
     res.append(name);
     res.append(" {\n");
