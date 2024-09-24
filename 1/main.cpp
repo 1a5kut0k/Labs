@@ -17,7 +17,7 @@ int main() {
             res = parseJson(name, json);
             std::cout<<res<<std::endl;
         }
-        catch(std::runtime_error){
+        catch(const std::runtime_error &){
             std::cout<<"Неверный ввод"<<std::endl;
         }
         name.clear();

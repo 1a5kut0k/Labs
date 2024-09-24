@@ -17,25 +17,25 @@ inline void trim(std::string &s) {
     ltrim(s);
 }
 
-bool islong(std::string &str){
+bool islong(const std::string &str){
     std::string::size_type s;
     try{
         std::stol(str, &s);
     }
-    catch (std::invalid_argument){
+    catch (const std::invalid_argument &){
         return false;
     }
     if(str.length() == s) return true;
     return false;
 }
 
-bool isdouble(std::string &str){
+bool isdouble(const std::string &str){
     std::string::size_type s;
     std::cout<<str<<std::endl;
     try{
         std::stod(str, &s);
     }
-    catch (std::invalid_argument){
+    catch (const std::invalid_argument &){
         return false;
     }
     if(str.length() <= s) return true;
@@ -128,7 +128,13 @@ char* parseJson(const char* &name, const char* &json){
     std::string n(name);
     std::string js(json);
     std::string r = parseJson(name, json);
-    char *res = new char[r.length() - 1];
+    char *res;
+    try{
+        res = new char[r.length() - 1];
+    }
+    catch(const std::bad_alloc &){
+        std::cout<<"Ошибка выделения памяти"<<std::endl;
+    }
     std::strcpy(res, r.c_str());
     return res;
 }
