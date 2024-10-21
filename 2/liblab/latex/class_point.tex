@@ -1,0 +1,190 @@
+\doxysection{Point Class Reference}
+\hypertarget{class_point}{}\label{class_point}\index{Point@{Point}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_a770323cf1da74f380f9e3cdbdeefa8e7}{Point}} (double nx=0, double ny=0)
+\item 
+\mbox{\hyperlink{class_point_ad39d121b5d1d3e238e429b1bb8b208a1}{Point}} (double cord\mbox{[}2\mbox{]})
+\item 
+double \mbox{\hyperlink{class_point_a95a5d65952121c174e916b190ae93d77}{getx}} ()
+\item 
+double \mbox{\hyperlink{class_point_af2f878c0a9a43be250ce31726590b317}{gety}} ()
+\item 
+void \mbox{\hyperlink{class_point_a3cc9e491e3b8791efac9bfedd18be66e}{setx}} (const double nx)
+\item 
+void \mbox{\hyperlink{class_point_aca72fd6346ba4bba4b21aa29e09d020e}{sety}} (const double ny)
+\item 
+double \mbox{\hyperlink{class_point_ab9587c7a46cb419746959d8df2db458d}{dist}} (const \mbox{\hyperlink{class_point}{Point}} \&p)
+\item 
+void \mbox{\hyperlink{class_point_a3d1ef5464b8edc6e774c2f3b080b567d}{rotate}} ()
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_point_a4218ebbe1cc5d02a823c49e3fc9c0703}{operator+}} (const \mbox{\hyperlink{class_point}{Point}} \&p) const
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_point_ae4ec92b14e766b962f09000aff318f48}{operator-\/}} (const \mbox{\hyperlink{class_point}{Point}} \&p) const
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_point_adab06c1d791725cd79d84293563b4051}{operator/}} (const int d) const
+\item 
+\mbox{\hyperlink{class_point}{Point}} \& \mbox{\hyperlink{class_point_aeddc0d96b79c43475694fb56cfd63f72}{operator=}} (const \mbox{\hyperlink{class_point}{Point}} \&right)
+\item 
+bool \mbox{\hyperlink{class_point_a6560f1266d623b65cf551813b0def383}{operator==}} (const \mbox{\hyperlink{class_point}{Point}} \&right)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Простой класс точки 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_point_a770323cf1da74f380f9e3cdbdeefa8e7}\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_point_a770323cf1da74f380f9e3cdbdeefa8e7} 
+Point\+::\+Point (\begin{DoxyParamCaption}\item[{double}]{nx}{ = {\ttfamily 0}, }\item[{double}]{ny}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор -\/ создание экземпляра класса с инициализацией заданными координатами 
+\begin{DoxyParams}{Parameters}
+{\em x} & первая координата \\
+\hline
+{\em y} & вторая координата \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_point_ad39d121b5d1d3e238e429b1bb8b208a1}\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_point_ad39d121b5d1d3e238e429b1bb8b208a1} 
+Point\+::\+Point (\begin{DoxyParamCaption}\item[{double}]{cord}{\mbox{[}2\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор -\/ создание экземпляра класса с инициализацией заданным массивом координат 
+\begin{DoxyParams}{Parameters}
+{\em cord} & массив состоящий из 2-\/х координат \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_point_ab9587c7a46cb419746959d8df2db458d}\index{Point@{Point}!dist@{dist}}
+\index{dist@{dist}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{dist()}{dist()}}
+{\footnotesize\ttfamily \label{class_point_ab9587c7a46cb419746959d8df2db458d} 
+double Point\+::dist (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Расстояние до точки -\/ вычисление расстояния до заданной точки 
+\begin{DoxyParams}{Parameters}
+{\em p} & точка, до которой вычисляется расстояние \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_point_a95a5d65952121c174e916b190ae93d77}\index{Point@{Point}!getx@{getx}}
+\index{getx@{getx}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{getx()}{getx()}}
+{\footnotesize\ttfamily \label{class_point_a95a5d65952121c174e916b190ae93d77} 
+double Point\+::getx (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Геттер -\/ получение текущего значения поля x \Hypertarget{class_point_af2f878c0a9a43be250ce31726590b317}\index{Point@{Point}!gety@{gety}}
+\index{gety@{gety}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{gety()}{gety()}}
+{\footnotesize\ttfamily \label{class_point_af2f878c0a9a43be250ce31726590b317} 
+double Point\+::gety (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Геттер -\/ получение текущего значения поля y \Hypertarget{class_point_a4218ebbe1cc5d02a823c49e3fc9c0703}\index{Point@{Point}!operator+@{operator+}}
+\index{operator+@{operator+}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{class_point_a4218ebbe1cc5d02a823c49e3fc9c0703} 
+\mbox{\hyperlink{class_point}{Point}} Point\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегрузка оператора \textquotesingle{}+\textquotesingle{} -\/ покоординатное сложение двух точек 
+\begin{DoxyParams}{Parameters}
+{\em p} & точка \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Результат в виде новой точки 
+\end{DoxyReturn}
+\Hypertarget{class_point_ae4ec92b14e766b962f09000aff318f48}\index{Point@{Point}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{class_point_ae4ec92b14e766b962f09000aff318f48} 
+\mbox{\hyperlink{class_point}{Point}} Point\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегрузка оператора \textquotesingle{}-\/\textquotesingle{} -\/ покоординатная разность двух точек 
+\begin{DoxyParams}{Parameters}
+{\em p} & точка \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Результат в виде новой точки 
+\end{DoxyReturn}
+\Hypertarget{class_point_adab06c1d791725cd79d84293563b4051}\index{Point@{Point}!operator/@{operator/}}
+\index{operator/@{operator/}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \label{class_point_adab06c1d791725cd79d84293563b4051} 
+\mbox{\hyperlink{class_point}{Point}} Point\+::operator/ (\begin{DoxyParamCaption}\item[{const int}]{d}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегрузка оператора \textquotesingle{}/\textquotesingle{} -\/ покоординатное деление точки на число 
+\begin{DoxyParams}{Parameters}
+{\em p} & целое число \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Результат в виде новой точки 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & при делении на 0 \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_point_aeddc0d96b79c43475694fb56cfd63f72}\index{Point@{Point}!operator=@{operator=}}
+\index{operator=@{operator=}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_point_aeddc0d96b79c43475694fb56cfd63f72} 
+\mbox{\hyperlink{class_point}{Point}} \& Point\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегрузка оператора коирующего присваивания \textquotesingle{}=\textquotesingle{} 
+\begin{DoxyParams}{Parameters}
+{\em right} & точка, из которого копируются данные \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_point_a6560f1266d623b65cf551813b0def383}\index{Point@{Point}!operator==@{operator==}}
+\index{operator==@{operator==}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_point_a6560f1266d623b65cf551813b0def383} 
+bool Point\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегрузка оператора \textquotesingle{}==\textquotesingle{} -\/ покоординатное сравнение двух точек 
+\begin{DoxyParams}{Parameters}
+{\em right} & точка, с которой сравнивать \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_point_a3d1ef5464b8edc6e774c2f3b080b567d}\index{Point@{Point}!rotate@{rotate}}
+\index{rotate@{rotate}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily \label{class_point_a3d1ef5464b8edc6e774c2f3b080b567d} 
+void Point\+::rotate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Поворот -\/ поворот точки относительно центра координат по часовой стрелке на 90 градусов \Hypertarget{class_point_a3cc9e491e3b8791efac9bfedd18be66e}\index{Point@{Point}!setx@{setx}}
+\index{setx@{setx}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{setx()}{setx()}}
+{\footnotesize\ttfamily \label{class_point_a3cc9e491e3b8791efac9bfedd18be66e} 
+void Point\+::setx (\begin{DoxyParamCaption}\item[{const double}]{nx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Сеттер -\/ установление нового значения для поля x 
+\begin{DoxyParams}{Parameters}
+{\em nx} & новое значение для x \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_point_aca72fd6346ba4bba4b21aa29e09d020e}\index{Point@{Point}!sety@{sety}}
+\index{sety@{sety}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{sety()}{sety()}}
+{\footnotesize\ttfamily \label{class_point_aca72fd6346ba4bba4b21aa29e09d020e} 
+void Point\+::sety (\begin{DoxyParamCaption}\item[{const double}]{ny}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Сеттер -\/ установление нового значения для поля x 
+\begin{DoxyParams}{Parameters}
+{\em ny} & новое значение для y \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{point_8cpp}{point.\+cpp}}\item 
+point.\+h\end{DoxyCompactItemize}

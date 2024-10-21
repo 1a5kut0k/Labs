@@ -1,0 +1,250 @@
+\doxysection{liblab.\+cpp}
+\hypertarget{liblab_8cpp_source}{}\label{liblab_8cpp_source}\mbox{\hyperlink{liblab_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}liblab.h"{}}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00013}\mbox{\hyperlink{class_point}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point}{Point}}\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00014}00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00020}\mbox{\hyperlink{class_point_a770323cf1da74f380f9e3cdbdeefa8e7}{00020}}\ \ \ \ \ \mbox{\hyperlink{class_point_a770323cf1da74f380f9e3cdbdeefa8e7}{Point}}(\textcolor{keywordtype}{double}\ nx\ =\ 0,\ \textcolor{keywordtype}{double}\ ny\ =\ 0):x(nx),\ y(ny)\{\};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00026}\mbox{\hyperlink{class_point_ad39d121b5d1d3e238e429b1bb8b208a1}{00026}}\ \ \ \ \ \mbox{\hyperlink{class_point_ad39d121b5d1d3e238e429b1bb8b208a1}{Point}}(\textcolor{keywordtype}{double}\ cord[2]):x(cord[0]),\ y(cord[1])\{\};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00031}\mbox{\hyperlink{class_point_a95a5d65952121c174e916b190ae93d77}{00031}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_point_a95a5d65952121c174e916b190ae93d77}{getx}}()\{\textcolor{keywordflow}{return}\ x;\}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00036}\mbox{\hyperlink{class_point_af2f878c0a9a43be250ce31726590b317}{00036}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_point_af2f878c0a9a43be250ce31726590b317}{gety}}()\{\textcolor{keywordflow}{return}\ y;\}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00042}\mbox{\hyperlink{class_point_a3cc9e491e3b8791efac9bfedd18be66e}{00042}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a3cc9e491e3b8791efac9bfedd18be66e}{setx}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ nx)\{x\ =\ nx;\}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00048}\mbox{\hyperlink{class_point_aca72fd6346ba4bba4b21aa29e09d020e}{00048}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_aca72fd6346ba4bba4b21aa29e09d020e}{sety}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ ny)\{y\ =\ ny;\}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00054}\mbox{\hyperlink{class_point_ab9587c7a46cb419746959d8df2db458d}{00054}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_point_ab9587c7a46cb419746959d8df2db458d}{dist}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ \&p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::sqrt(pow((x\ -\/\ p.x),\ 2)\ +\ pow((y\ -\/\ p.y),\ 2));}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00061}\mbox{\hyperlink{class_point_a3d1ef5464b8edc6e774c2f3b080b567d}{00061}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a3d1ef5464b8edc6e774c2f3b080b567d}{rotate}}()\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ *\ y\ >\ 0)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ y\ *=\ -\/1;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (x\ *\ y\ <\ 0)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ x\ *=\ -\/1;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ x,\ y\ =\ y,\ x;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00076}\mbox{\hyperlink{class_point_a4218ebbe1cc5d02a823c49e3fc9c0703}{00076}}\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ \mbox{\hyperlink{class_point_a4218ebbe1cc5d02a823c49e3fc9c0703}{operator\ +\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ p)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_point}{Point}}\{x\ +\ p.x,\ y\ +\ p.y\};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00085}\mbox{\hyperlink{class_point_ae4ec92b14e766b962f09000aff318f48}{00085}}\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ \mbox{\hyperlink{class_point_ae4ec92b14e766b962f09000aff318f48}{operator\ -\/\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ p)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_point}{Point}}\{x\ -\/\ p.x,\ y\ -\/\ p.y\};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00095}\mbox{\hyperlink{class_point_adab06c1d791725cd79d84293563b4051}{00095}}\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ \mbox{\hyperlink{class_point_adab06c1d791725cd79d84293563b4051}{operator\ /\ }}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ d)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(d\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_point}{Point}}\{x\ /\ d,\ y\ /\ d\};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00105}\mbox{\hyperlink{class_point_aeddc0d96b79c43475694fb56cfd63f72}{00105}}\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\&\ \mbox{\hyperlink{class_point_aeddc0d96b79c43475694fb56cfd63f72}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ right)\ \{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ \&right)\ \{\textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ x\ =\ right.x;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ y\ =\ right.y;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00116}\mbox{\hyperlink{class_point_a6560f1266d623b65cf551813b0def383}{00116}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_point_a6560f1266d623b65cf551813b0def383}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ \&right)\ \{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ right.\mbox{\hyperlink{class_point_a95a5d65952121c174e916b190ae93d77}{getx}}()\ \&\&\ y\ ==\ right.\mbox{\hyperlink{class_point_af2f878c0a9a43be250ce31726590b317}{gety}}());}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00119}00119\ \};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00127}\mbox{\hyperlink{liblab_8cpp_aaf4fffadecfecb439d8010295566bd8d}{00127}}\ std::ostream\&\ \mbox{\hyperlink{liblab_8cpp_aaf4fffadecfecb439d8010295566bd8d}{operator\ <<}}(std::ostream\&\ stream,\ \mbox{\hyperlink{class_point}{Point}}\&\ p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00128}00128\ \ \ \ \ stream\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ p.\mbox{\hyperlink{class_point_a95a5d65952121c174e916b190ae93d77}{getx}}()\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ p.\mbox{\hyperlink{class_point_af2f878c0a9a43be250ce31726590b317}{gety}}()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{return}\ stream;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00130}00130\ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00138}\mbox{\hyperlink{liblab_8cpp_aeb8163af1bff937ed5c47ea6033d9eba}{00138}}\ std::istream\&\ \mbox{\hyperlink{liblab_8cpp_aeb8163af1bff937ed5c47ea6033d9eba}{operator\ >>}}(std::istream\&\ stream,\ \mbox{\hyperlink{class_point}{Point}}\&\ p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keywordtype}{double}\ x,\ y;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00140}00140\ \ \ \ \ stream\ >>\ x\ >>\ y;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00141}00141\ \ \ \ \ p.\mbox{\hyperlink{class_point_a3cc9e491e3b8791efac9bfedd18be66e}{setx}}(x);}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00142}00142\ \ \ \ \ p.\mbox{\hyperlink{class_point_aca72fd6346ba4bba4b21aa29e09d020e}{sety}}(y);}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{return}\ stream;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00149}\mbox{\hyperlink{liblab_8cpp_a69eac2800a33c2da601d4b68465afccf}{00149}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{liblab_8cpp_a69eac2800a33c2da601d4b68465afccf}{square}}(\textcolor{keywordtype}{double}\ x1,\textcolor{keywordtype}{double}\ y1,\textcolor{keywordtype}{double}\ x2,\textcolor{keywordtype}{double}\ y2,\textcolor{keywordtype}{double}\ x3,\textcolor{keywordtype}{double}\ y3)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.5*fabs((x2-\/x3)*(y1-\/y3)\ -\/\ (x1-\/x3)*(y2-\/y3));}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00151}00151\ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00159}\mbox{\hyperlink{liblab_8cpp_a31a552169c3705c982dce09b047aed50}{00159}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{liblab_8cpp_a31a552169c3705c982dce09b047aed50}{find}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ *a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ b)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{keywordflow}{if}(std::any\_of(a.begin(),\ a.end(),\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ \&x)\{return\ x\ ==\ b;\}))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00162}00162\ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00168}00168\ \textcolor{keyword}{class\ }Polyhedron\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00169}00169\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00175}00175\ \ \ \ \ Polyhedron(\mbox{\hyperlink{class_point}{Point}}\ \&p):n(1)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ vertices\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}[1];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ \textcolor{keyword}{const}\ std::\&bad\_alloc()}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ throw\ std::bad\_alloc();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ vertices[0]\ =\ p;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00181}00181\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00189}00189\ \ \ \ \ Polyhedron(\textcolor{keywordtype}{int}\ n,\ const\ \mbox{\hyperlink{class_point}{Point}}\ *vert)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ this-\/>n\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ vertices\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}[n];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ \textcolor{keyword}{const}\ std::\&bad\_alloc()}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ throw\ std::bad\_alloc();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ for(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{liblab_8cpp_a31a552169c3705c982dce09b047aed50}{find}}(vertices,\ vert[i])\ ==\ \textcolor{keyword}{true})\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ vertices[this-\/>n]\ =\ vert[i];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>n++;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>n\ !=\ 0)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ *buff\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}[this-\/>n];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ \textcolor{keyword}{const}\ std::\&bad\_alloc()}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ std::bad\_alloc();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ for(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>n;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buff[i]\ =\ vertices[i];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ vertices;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ vertices\ =\ buff;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00211}00211\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00218}00218\ \ \ \ \ Polyhedron(\textcolor{keyword}{const}\ Polyhedron\ \&p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ n\ =\ p.getn();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ vertices\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}[n];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ \textcolor{keyword}{const}\ std::\&bad\_alloc()}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ throw\ std::bad\_alloc();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ for(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ vertices[i]\ =\ p[i];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00227}00227\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00234}00234\ \ \ \ \ Polyhedron(Polyhedron\ \&\&p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ n\ =\ p.n;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ vertices\ =\ p.vertices;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ p.vertices\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ p.n\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00239}00239\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{keywordtype}{int}\ getn()\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ n;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00246}00246\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00252}00252\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ center()\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xm\ =\ 0,\ ym\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ std::for\_each(vertices.begin(),\ vertices.end(),\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ \&v)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ xm\ +=\ v.getx();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ ym\ +=\ v.gety();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ xm\ /=\ n;\ ym\ /=\ n;\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ s\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xc\ =\ 0,\ yc\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ s1\ =\ \mbox{\hyperlink{liblab_8cpp_a69eac2800a33c2da601d4b68465afccf}{square}}(xm,\ ym,\ vertices[i].getx(),\ vertices[i].gety(),\ vertices[(i+1)\%n].getx(),\ vertices[(i+1)\%n].gety());}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ xc\ +=\ s1\ *\ (xm\ +\ vertices[i].getx()\ +\ vertices[(i+1)\%n].getx())/3;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ yc\ +=\ s1\ *\ (ym\ +\ vertices[i].gety()\ +\ vertices[(i+1)\%n].gety())/3;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ s\ +=\ s1;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ xc\ /=\ s;\ yc\ /=\ s;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_point}{Point}}(xc,\ yc);}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00269}00269\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00275}00275\ \ \ \ \ \textcolor{keywordtype}{void}\ rotate(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ o,\ \textcolor{keywordtype}{int}\ phi)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ phi\ \%=\ 4;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ phi\ =\ 4\ -\/\ phi;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ std::for\_each(vertices.begin(),\ vertices.end(),\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ \&v)\{\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ v\ -\/\ o;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ for(int\ j\ =\ 0;\ j\ <\ phi;\ j++)\ v.rotate();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ v\ +\ o;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00283}00283\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00289}00289\ \ \ \ \ Polyhedron\&\ operator\ +=\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{liblab_8cpp_a31a552169c3705c982dce09b047aed50}{find}}(vertices,\ n,\ p)\ ==\ \textcolor{keyword}{false})\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ *buff\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}[n];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (n\ -\/\ 1);\ i++)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buff[i]\ =\ vertices[i];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ buff[n\ -\/\ 1]\ =\ p;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ vertices;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ vertices\ =\ buff;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00301}00301\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00308}00308\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\&\ operator\ []\ (\textcolor{keywordtype}{int}\ i)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ >=\ n)}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::\_\_throw\_out\_of\_range();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vertices[i];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00312}00312\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00318}00318\ \ \ \ \ Polyhedron\&\ operator\ =\ (\textcolor{keyword}{const}\ Polyhedron\ \&p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ vertices;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ n\ =\ p.getn();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ vertices\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}[n];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>n;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ vertices[i]\ =\ p[i];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00326}00326\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00332}00332\ \ \ \ \ Polyhedron\&\ operator\ =\ (Polyhedron\ \&\&p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ vertices;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ n\ =\ p.getn();}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ vertices\ =\ p.vertices;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ p.vertices\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ p.n\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00339}00339\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00340}00340\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00345}00345\ \ \ \ \ \textcolor{keywordtype}{void}\ shift(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ std::for\_each(vertices.begin(),\ vertices.end(),\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ \&v)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ v\ +\ p;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00349}00349\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00351}00351\ \ \ \ \ \string~Polyhedron()\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ vertices;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ n\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ vertices\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00355}00355\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00356}00356\ \};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00364}00364\ std::ostream\&\ \mbox{\hyperlink{liblab_8cpp_aaf4fffadecfecb439d8010295566bd8d}{operator\ <<}}(std::ostream\&\ stream,\ Polyhedron\&\ p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00365}00365\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ p.getn();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ stream\ <<\ p[i]\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00367}00367\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00368}00368\ \ \ \ \ \textcolor{keywordflow}{return}\ stream;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00369}00369\ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00370}00370\ }
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00377}00377\ std::istream\&\ \mbox{\hyperlink{liblab_8cpp_aeb8163af1bff937ed5c47ea6033d9eba}{operator\ >>}}(std::istream\&\ stream,\ Polyhedron\&\ p)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00378}00378\ \ \ \ \ \textcolor{keywordtype}{int}\ n;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00379}00379\ \ \ \ \ stream\ >>\ n;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00380}00380\ \ \ \ \ p.n\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00381}00381\ \ \ \ \ p.vertices\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}[n];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00382}00382\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ a;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ stream\ >>\ a;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{liblab_8cpp_a31a552169c3705c982dce09b047aed50}{find}}(p.vertices,\ p.n,\ a)\ ==\ \textcolor{keyword}{true})\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ p.vertices[p.n]\ =\ a;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ p.n++;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00388}00388\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00389}00389\ \ \ \ \ \textcolor{keywordflow}{if}(p.n\ !=\ 0)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ *buff\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}[p.n];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ p.n;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ buff[i]\ =\ p.vertices[i];}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ p.vertices;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ p.vertices\ =\ buff;}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00396}00396\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00397}00397\ \ \ \ \ \textcolor{keywordflow}{return}\ stream}
+\DoxyCodeLine{\Hypertarget{liblab_8cpp_source_l00398}00398\ \}}
+
+\end{DoxyCode}

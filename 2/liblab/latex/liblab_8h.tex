@@ -1,0 +1,53 @@
+\doxysection{liblab.\+h File Reference}
+\hypertarget{liblab_8h}{}\label{liblab_8h}\index{liblab.h@{liblab.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include "{}point.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_polyhedron}{Polyhedron}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{liblab_8h_a9f18dae27d90d3d01e28613afe9bea81}{operator$<$$<$}} (std\+::ostream \&stream, \mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&p)
+\item 
+std\+::istream \& \mbox{\hyperlink{liblab_8h_aac28d94683de37b8e19ea4ca88be28ca}{operator$>$$>$}} (std\+::istream \&stream, \mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{liblab_8h_a9f18dae27d90d3d01e28613afe9bea81}\index{liblab.h@{liblab.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!liblab.h@{liblab.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{liblab_8h_a9f18dae27d90d3d01e28613afe9bea81} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream}{, }\item[{\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&}]{p}{}\end{DoxyParamCaption})}
+
+Перегрузка оператора \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} -\/ вывод точек многогранника 
+\begin{DoxyParams}{Parameters}
+{\em stream} & выходной поток \\
+\hline
+{\em p} & многогранник \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Полученный выходной поток с выведенным многогранником 
+\end{DoxyReturn}
+\Hypertarget{liblab_8h_aac28d94683de37b8e19ea4ca88be28ca}\index{liblab.h@{liblab.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!liblab.h@{liblab.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily \label{liblab_8h_aac28d94683de37b8e19ea4ca88be28ca} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream}{, }\item[{\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&}]{p}{}\end{DoxyParamCaption})}
+
+Перегрузка оператора \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} -\/ ввод точек многогранника 
+\begin{DoxyParams}{Parameters}
+{\em stream} & входной поток \\
+\hline
+{\em p} & многогранник \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Полученный входной поток с введенным многогранником 
+\end{DoxyReturn}

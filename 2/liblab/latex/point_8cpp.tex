@@ -1,0 +1,60 @@
+\doxysection{point.\+cpp File Reference}
+\hypertarget{point_8cpp}{}\label{point_8cpp}\index{point.cpp@{point.cpp}}
+
+
+Файл реализации класса \doxylink{class_point}{Point}.  
+
+
+{\ttfamily \#include "{}point.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_point}{Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{point_8cpp_aaf4fffadecfecb439d8010295566bd8d}{operator$<$$<$}} (std\+::ostream \&stream, \mbox{\hyperlink{class_point}{Point}} \&p)
+\item 
+std\+::istream \& \mbox{\hyperlink{point_8cpp_aeb8163af1bff937ed5c47ea6033d9eba}{operator$>$$>$}} (std\+::istream \&stream, \mbox{\hyperlink{class_point}{Point}} \&p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Файл реализации класса \doxylink{class_point}{Point}. 
+
+Данный файл содержит в себе реализацию методов и операторов класса \doxylink{class_point}{Point} (Точка) 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{point_8cpp_aaf4fffadecfecb439d8010295566bd8d}\index{point.cpp@{point.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!point.cpp@{point.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{point_8cpp_aaf4fffadecfecb439d8010295566bd8d} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream}{, }\item[{\mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})}
+
+Перегрузка оператора \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} -\/ вывод точки в выходной поток 
+\begin{DoxyParams}{Parameters}
+{\em stream} & выходной поток \\
+\hline
+{\em p} & точка \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Полученный выходной поток с выведенной точкой 
+\end{DoxyReturn}
+\Hypertarget{point_8cpp_aeb8163af1bff937ed5c47ea6033d9eba}\index{point.cpp@{point.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!point.cpp@{point.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily \label{point_8cpp_aeb8163af1bff937ed5c47ea6033d9eba} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream}{, }\item[{\mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})}
+
+Перегрузка оператора \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} -\/ ввод точки из входного потока 
+\begin{DoxyParams}{Parameters}
+{\em stream} & входной поток \\
+\hline
+{\em p} & точка \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Полученный входной поток с введенной точкой 
+\end{DoxyReturn}

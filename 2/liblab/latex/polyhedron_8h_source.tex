@@ -1,0 +1,31 @@
+\doxysection{polyhedron.\+h}
+\hypertarget{polyhedron_8h_source}{}\label{polyhedron_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}point.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_polyhedron}{Polyhedron}}\{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ 0;}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ *vertices;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_polyhedron_a0e8374031df5fef4572af4297a3b9c0c}{Polyhedron}}(\mbox{\hyperlink{class_point}{Point}}\ \&p);}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_polyhedron_a0e8374031df5fef4572af4297a3b9c0c}{Polyhedron}}(\textcolor{keywordtype}{int}\ n,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ *vert);}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_polyhedron_a0e8374031df5fef4572af4297a3b9c0c}{Polyhedron}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_polyhedron}{Polyhedron}}\ \&p);}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_polyhedron_a0e8374031df5fef4572af4297a3b9c0c}{Polyhedron}}(\mbox{\hyperlink{class_polyhedron}{Polyhedron}}\ \&\&p);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_polyhedron_a981532eb13ffed0ff3f45a1b7f6cea7d}{getn}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ \mbox{\hyperlink{class_polyhedron_a78512513e265f112de0b6945d7ef625a}{center}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polyhedron_ab85cf950d992d4a1dda5f798e54148af}{rotate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ o,\ \textcolor{keywordtype}{int}\ phi);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_polyhedron}{Polyhedron}}\&\ \mbox{\hyperlink{class_polyhedron_a42edd0f2cb07c72eac1bed9f27aa14a5}{operator\ +=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ p);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\&\ \mbox{\hyperlink{class_polyhedron_a4533f841e383d016ad825a3027ca5f87}{operator\ []\ }}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_polyhedron}{Polyhedron}}\&\ \mbox{\hyperlink{class_polyhedron_a4cee7a5bf6546f2d6c4a0904f005a40a}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_polyhedron}{Polyhedron}}\ \&p);}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_polyhedron}{Polyhedron}}\&\ \mbox{\hyperlink{class_polyhedron_a4cee7a5bf6546f2d6c4a0904f005a40a}{operator\ =\ }}(\mbox{\hyperlink{class_polyhedron}{Polyhedron}}\ \&\&p);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polyhedron_a27b55554fdd19fc664993a198e4b8ace}{shift}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ a);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_polyhedron}{\string~Polyhedron}}();}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ std::ostream\&\ operator\ <<(std::ostream\&\ stream,\ \mbox{\hyperlink{class_polyhedron}{Polyhedron}}\&\ p);}
+\DoxyCodeLine{00026\ std::istream\&\ operator\ >>(std::istream\&\ stream,\ \mbox{\hyperlink{class_polyhedron}{Polyhedron}}\&\ p);}
+
+\end{DoxyCode}

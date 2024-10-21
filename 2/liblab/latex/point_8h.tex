@@ -1,0 +1,52 @@
+\doxysection{point.\+h File Reference}
+\hypertarget{point_8h}{}\label{point_8h}\index{point.h@{point.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_point}{Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{point_8h_a711cab843da1f780c42f7ae7794ca194}{operator$<$$<$}} (std\+::ostream \&, \mbox{\hyperlink{class_point}{Point}} \&)
+\item 
+std\+::istream \& \mbox{\hyperlink{point_8h_ab8b527a91d526aba6dc9a69a11221404}{operator$>$$>$}} (std\+::istream \&, \mbox{\hyperlink{class_point}{Point}} \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{point_8h_a711cab843da1f780c42f7ae7794ca194}\index{point.h@{point.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{point_8h_a711cab843da1f780c42f7ae7794ca194} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream}{, }\item[{\mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})}
+
+Перегрузка оператора \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} -\/ вывод точки в выходной поток 
+\begin{DoxyParams}{Parameters}
+{\em stream} & выходной поток \\
+\hline
+{\em p} & точка \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Полученный выходной поток с выведенной точкой 
+\end{DoxyReturn}
+\Hypertarget{point_8h_ab8b527a91d526aba6dc9a69a11221404}\index{point.h@{point.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!point.h@{point.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily \label{point_8h_ab8b527a91d526aba6dc9a69a11221404} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{stream}{, }\item[{\mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})}
+
+Перегрузка оператора \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} -\/ ввод точки из входного потока 
+\begin{DoxyParams}{Parameters}
+{\em stream} & входной поток \\
+\hline
+{\em p} & точка \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Полученный входной поток с введенной точкой 
+\end{DoxyReturn}

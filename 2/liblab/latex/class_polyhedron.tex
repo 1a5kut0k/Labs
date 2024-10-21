@@ -1,0 +1,198 @@
+\doxysection{Polyhedron Class Reference}
+\hypertarget{class_polyhedron}{}\label{class_polyhedron}\index{Polyhedron@{Polyhedron}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_polyhedron_a0e8374031df5fef4572af4297a3b9c0c}{Polyhedron}} (\mbox{\hyperlink{class_point}{Point}} \&p)
+\item 
+\mbox{\hyperlink{class_polyhedron_a7b33ef489f8f953221fa96d5c2b7a4bc}{Polyhedron}} (int n, const \mbox{\hyperlink{class_point}{Point}} \texorpdfstring{$\ast$}{*}vert)
+\item 
+\mbox{\hyperlink{class_polyhedron_afa883e1ad42d04c0b316ea685a59206a}{Polyhedron}} (const \mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&p)
+\item 
+\mbox{\hyperlink{class_polyhedron_a80a21aad27f5db644b6ef0cb7a6410af}{Polyhedron}} (\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&\&p)
+\item 
+int \mbox{\hyperlink{class_polyhedron_a981532eb13ffed0ff3f45a1b7f6cea7d}{getn}} ()
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_polyhedron_a78512513e265f112de0b6945d7ef625a}{center}} ()
+\item 
+void \mbox{\hyperlink{class_polyhedron_ab85cf950d992d4a1dda5f798e54148af}{rotate}} (const \mbox{\hyperlink{class_point}{Point}} \&o, int phi)
+\item 
+\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \& \mbox{\hyperlink{class_polyhedron_a42edd0f2cb07c72eac1bed9f27aa14a5}{operator+=}} (const \mbox{\hyperlink{class_point}{Point}} \&p)
+\item 
+\mbox{\hyperlink{class_point}{Point}} \& \mbox{\hyperlink{class_polyhedron_a4533f841e383d016ad825a3027ca5f87}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\item 
+\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \& \mbox{\hyperlink{class_polyhedron_a4cee7a5bf6546f2d6c4a0904f005a40a}{operator=}} (const \mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&p)
+\item 
+\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \& \mbox{\hyperlink{class_polyhedron_aebfdf3142ab45ed7c71373f6f835248c}{operator=}} (\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&\&p)
+\item 
+void \mbox{\hyperlink{class_polyhedron_a27b55554fdd19fc664993a198e4b8ace}{shift}} (const \mbox{\hyperlink{class_point}{Point}} \&p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Сложный класс точки 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_polyhedron_a0e8374031df5fef4572af4297a3b9c0c}\index{Polyhedron@{Polyhedron}!Polyhedron@{Polyhedron}}
+\index{Polyhedron@{Polyhedron}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{Polyhedron()}{Polyhedron()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_polyhedron_a0e8374031df5fef4572af4297a3b9c0c} 
+Polyhedron\+::\+Polyhedron (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор -\/ создание экземпляров класса с инициализацией заданной точкой 
+\begin{DoxyParams}{Parameters}
+{\em p} & точка для инициализации \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+alloc()} & в случае ошибки выделения памяти \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_polyhedron_a7b33ef489f8f953221fa96d5c2b7a4bc}\index{Polyhedron@{Polyhedron}!Polyhedron@{Polyhedron}}
+\index{Polyhedron@{Polyhedron}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{Polyhedron()}{Polyhedron()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_polyhedron_a7b33ef489f8f953221fa96d5c2b7a4bc} 
+Polyhedron\+::\+Polyhedron (\begin{DoxyParamCaption}\item[{int}]{n}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \texorpdfstring{$\ast$}{*}}]{vert}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор -\/ создание экземпляров класса с инициализацией заданным массивом точек 
+\begin{DoxyParams}{Parameters}
+{\em n} & размер массива \\
+\hline
+{\em vert} & массив точек \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+alloc()} & в случае ошибки выделения памяти \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_polyhedron_afa883e1ad42d04c0b316ea685a59206a}\index{Polyhedron@{Polyhedron}!Polyhedron@{Polyhedron}}
+\index{Polyhedron@{Polyhedron}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{Polyhedron()}{Polyhedron()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_polyhedron_afa883e1ad42d04c0b316ea685a59206a} 
+Polyhedron\+::\+Polyhedron (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор копирования -\/ создание экземпляра класса на основе другого экземпляра копированием данных 
+\begin{DoxyParams}{Parameters}
+{\em p} & троичный вектор \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+alloc()} & в случае ошибки выделения памяти \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_polyhedron_a80a21aad27f5db644b6ef0cb7a6410af}\index{Polyhedron@{Polyhedron}!Polyhedron@{Polyhedron}}
+\index{Polyhedron@{Polyhedron}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{Polyhedron()}{Polyhedron()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_polyhedron_a80a21aad27f5db644b6ef0cb7a6410af} 
+Polyhedron\+::\+Polyhedron (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&\&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор перемещения -\/ создание экземпляра класса на основе другого экземпляра копированием данных 
+\begin{DoxyParams}{Parameters}
+{\em p} & троичный вектор \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+alloc()} & в случае ошибки выделения памяти \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_polyhedron_a78512513e265f112de0b6945d7ef625a}\index{Polyhedron@{Polyhedron}!center@{center}}
+\index{center@{center}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{center()}{center()}}
+{\footnotesize\ttfamily \label{class_polyhedron_a78512513e265f112de0b6945d7ef625a} 
+\mbox{\hyperlink{class_point}{Point}} Polyhedron\+::center (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Нахождение центра тяжести многогранника \begin{DoxyReturn}{Returns}
+точка, являющаяся центром тяжести 
+\end{DoxyReturn}
+\Hypertarget{class_polyhedron_a981532eb13ffed0ff3f45a1b7f6cea7d}\index{Polyhedron@{Polyhedron}!getn@{getn}}
+\index{getn@{getn}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{getn()}{getn()}}
+{\footnotesize\ttfamily \label{class_polyhedron_a981532eb13ffed0ff3f45a1b7f6cea7d} 
+int Polyhedron\+::getn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Геттер -\/ получение текущего количества точек \Hypertarget{class_polyhedron_a42edd0f2cb07c72eac1bed9f27aa14a5}\index{Polyhedron@{Polyhedron}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \label{class_polyhedron_a42edd0f2cb07c72eac1bed9f27aa14a5} 
+\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \& Polyhedron\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегрузка оператора \textquotesingle{}+=\textquotesingle{} -\/ добавление точки к многограннику 
+\begin{DoxyParams}{Parameters}
+{\em p} & точка, которая добавляется многогранник \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_polyhedron_a4cee7a5bf6546f2d6c4a0904f005a40a}\index{Polyhedron@{Polyhedron}!operator=@{operator=}}
+\index{operator=@{operator=}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_polyhedron_a4cee7a5bf6546f2d6c4a0904f005a40a} 
+\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \& Polyhedron\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегрузка оператора копирующего присваивания \textquotesingle{}=\textquotesingle{} 
+\begin{DoxyParams}{Parameters}
+{\em p} & многогранник, из которого копируются данные \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_polyhedron_aebfdf3142ab45ed7c71373f6f835248c}\index{Polyhedron@{Polyhedron}!operator=@{operator=}}
+\index{operator=@{operator=}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_polyhedron_aebfdf3142ab45ed7c71373f6f835248c} 
+\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \& Polyhedron\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_polyhedron}{Polyhedron}} \&\&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегрузка оператора перемещающего присваивания \textquotesingle{}=\textquotesingle{} 
+\begin{DoxyParams}{Parameters}
+{\em p} & многогранник, из которого перемещаются данные \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_polyhedron_a4533f841e383d016ad825a3027ca5f87}\index{Polyhedron@{Polyhedron}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \label{class_polyhedron_a4533f841e383d016ad825a3027ca5f87} 
+\mbox{\hyperlink{class_point}{Point}} \& Polyhedron\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Перегрузка оператора \textquotesingle{}\mbox{[}\mbox{]}\textquotesingle{} -\/ получение i-\/того элемента в массиве точек 
+\begin{DoxyParams}{Parameters}
+{\em i} & индекс точки для возвращения \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::\+\_\+\+\_\+throw\+\_\+out\+\_\+of\+\_\+range()} & при выходе за размеры массива \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_polyhedron_ab85cf950d992d4a1dda5f798e54148af}\index{Polyhedron@{Polyhedron}!rotate@{rotate}}
+\index{rotate@{rotate}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily \label{class_polyhedron_ab85cf950d992d4a1dda5f798e54148af} 
+void Polyhedron\+::rotate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{o}{, }\item[{int}]{phi}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Поворот всего многогранника против часовой стрелки вокруг заданной точки на угол, кратный 90 градусов 
+\begin{DoxyParams}{Parameters}
+{\em o} & точка, вокруг которой выполняется поворот \\
+\hline
+{\em phi} & число раз, которое нужно повернуть на 90 градусов \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_polyhedron_a27b55554fdd19fc664993a198e4b8ace}\index{Polyhedron@{Polyhedron}!shift@{shift}}
+\index{shift@{shift}!Polyhedron@{Polyhedron}}
+\doxysubsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily \label{class_polyhedron_a27b55554fdd19fc664993a198e4b8ace} 
+void Polyhedron\+::shift (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Функция сдвига многогранника на вектор, построенный из центра координат в заданную точку 
+\begin{DoxyParams}{Parameters}
+{\em p} & искомая точка \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{polyhedron_8cpp}{polyhedron.\+cpp}}\item 
+polyhedron.\+h\end{DoxyCompactItemize}
