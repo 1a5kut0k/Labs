@@ -58,7 +58,8 @@ public:
             throw std::bad_alloc();
         for(int i = 0; i < n; i++){
             if(find(vertices, vert[i]) == true) continue;
-            vertices[this->n] = vert[i];
+            vertices[this->n].setx(vert[i].getx());
+            vertices[this->n].sety(vert[i].gety());
             this->n++;
         }
         if(this->n != 0){
@@ -109,7 +110,7 @@ public:
         Нахождение центра тяжести многогранника
         \return точка, являющаяся центром тяжести
     */
-    Point center(){
+    Point& center(){
 	    double xm = 0, ym = 0;
 		std::for_each(vertices.begin(), vertices.end(), [&](const Point &v){
 			xm += v.getx();
