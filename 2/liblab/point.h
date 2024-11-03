@@ -6,6 +6,7 @@ class Point{
 private:
     double x, y;
 public:
+    Point();
     Point(double, double);
     Point(double [2]);
     double getx();
@@ -16,9 +17,9 @@ public:
     void rotate();
     Point operator + (const Point&) const;
     Point operator - (const Point&) const;
-    Point operator / (const Point&) const;
+    Point operator / (int) const;
     Point& operator = (const Point&);
-    bool operator ==(const Point&);
+    bool operator ==(Point&);
 };
 std::ostream& operator <<(std::ostream&, Point&);
 std::istream& operator >>(std::istream&, Point&);

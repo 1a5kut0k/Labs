@@ -1,0 +1,4 @@
+/workspaces/Labs/2/liblab/CMakeFiles/rebuild_cache.dir
+/workspaces/Labs/2/liblab/CMakeFiles/edit_cache.dir
+/workspaces/Labs/2/liblab/CMakeFiles/polyhedron.dir
+/workspaces/Labs/2/liblab/CMakeFiles/point.dir

@@ -20,27 +20,19 @@ double square(double x1,double y1,double x2,double y2,double x3,double y3){
     \param b искомая точка
     \return true, если точка есть в массиве, иначе false
 */
-bool find(const Point *a, const Point& b){
-    if(std::any_of(a.begin(), a.end(), [&](const Point &x){return x == b;})) return true;
+bool find(Point *a, int n, Point& b){
+    for(int i = 0; i < n; i++){
+        if(a[i] == b) return true;
+    }
     return false;
 }
-
-/*!
-    Сложный класс точки
-*/
-class Polyhedron{
-public:
 
     /*!
         Конструктор - создание экземпляров класса с инициализацией заданной точкой
         \param p точка для инициализации
-        \throw std::bad_alloc() в случае ошибки выделения памяти
     */
-    Polyhedron(Point &p):n(1){
-        try
-            vertices = new Point[1];
-        catch const std::&bad_alloc()
-            throw std::bad_alloc();
+    Polyhedron::Polyhedron(Point &p):n(1){
+        vertices = new Point[1];
         vertices[0] = p;
     }
 
@@ -48,26 +40,19 @@ public:
         Конструктор - создание экземпляров класса с инициализацией заданным массивом точек
         \param n размер массива
         \param vert массив точек
-        \throw std::bad_alloc() в случае ошибки выделения памяти
     */
-    Polyhedron(int n, const Point *vert){
+    Polyhedron::Polyhedron(int n, Point *vert){
         this->n = 0;
-        try
-            vertices = new Point[n];
-        catch const std::&bad_alloc()
-            throw std::bad_alloc();
+        vertices = new Point[n];
         for(int i = 0; i < n; i++){
-            if(find(vertices, vert[i]) == true) continue;
+            if(find(vertices, this->n,  vert[i]) == true) continue;
             vertices[this->n].setx(vert[i].getx());
             vertices[this->n].sety(vert[i].gety());
             this->n++;
         }
         if(this->n != 0){
-            try
-                Point *buff = new Point[this->n];
-            catch const std::&bad_alloc()
-                throw std::bad_alloc();
-            std::copy(vertices.begin(),vertices.end() ,std::back_inserter(buff));
+            Point *buff = new Point[this->n];
+            std::copy(vertices,vertices + this->n , buff);
             delete[] vertices;
             vertices = buff;
         }
@@ -76,15 +61,11 @@ public:
     /*!
         Конструктор копирования - создание экземпляра класса на основе другого экземпляра копированием данных
         \param p троичный вектор
-        \throw std::bad_alloc() в случае ошибки выделения памяти
     */
-    Polyhedron(const Polyhedron &p){
+    Polyhedron::Polyhedron(Polyhedron &p){
         n = p.getn();
-        try
-            vertices = new Point[n];
-        catch const std::&bad_alloc()
-            throw std::bad_alloc();
-        std::copy(p.vertices.begin(), p.vertices.end(),std::back_inserter(vertices));
+        vertices = new Point[n];
+        std::copy(p.vertices, p.vertices + n, vertices);
     }
 
     /*!
@@ -92,7 +73,7 @@ public:
         \param p троичный вектор
         \throw std::bad_alloc() в случае ошибки выделения памяти
     */
-    Polyhedron(Polyhedron &&p){
+    Polyhedron::Polyhedron(Polyhedron &&p){
         n = p.n;
         vertices = p.vertices;
         p.vertices = NULL;
@@ -102,7 +83,7 @@ public:
     /*!
         Геттер - получение текущего количества точек
     */
-    int getn(){
+    int Polyhedron::getn(){
         return n;
     }
 
@@ -110,9 +91,9 @@ public:
         Нахождение центра тяжести многогранника
         \return точка, являющаяся центром тяжести
     */
-    Point& center(){
+    Point Polyhedron::center(){
 	    double xm = 0, ym = 0;
-		std::for_each(vertices.begin(), vertices.end(), [&](const Point &v){
+		std::for_each(vertices, vertices + this->n, [&](Point &v){
 			xm += v.getx();
 			ym += v.gety();
 		});
@@ -126,17 +107,17 @@ public:
 			s += s1;
 		}
 		xc /= s; yc /= s;
-        return Point(xc, yc);
+        return Point{xc, yc};
     }
     /*!
         Поворот всего многогранника против часовой стрелки вокруг заданной точки на угол, кратный 90 градусов
         \param o точка, вокруг которой выполняется поворот
         \param phi число раз, которое нужно повернуть на 90 градусов
     */
-    void rotate(const Point& o, int phi){
+    void Polyhedron::rotate(const Point& o, int phi){
         phi %= 4;
         phi = 4 - phi;
-        std::for_each(vertices.begin(), vertices.end(), [&](const Point &v){
+        std::for_each(vertices, vertices + n, [&](Point &v){
             v = v - o;
             for(int j = 0; j < phi; j++) v.rotate();
             v = v + o;
@@ -147,11 +128,11 @@ public:
         Перегрузка оператора '+=' - добавление точки к многограннику
         \param p точка, которая добавляется многогранник
     */
-    Polyhedron& operator += (const Point& p){
+    Polyhedron& Polyhedron::operator += (Point& p){
         if(find(vertices, n, p) == false){
             n++;
             Point *buff = new Point[n];
-            std::copy(vertices.begin(), vertices.end(),std::back_inserter(vertices));
+            std::copy(vertices, vertices + n - 1, buff);
             buff[n - 1] = p;
             delete[] vertices;
             vertices = buff;
@@ -162,11 +143,11 @@ public:
     /*!
         Перегрузка оператора '[]' - получение i-того элемента в массиве точек
         \param i индекс точки для возвращения
-        \throw std::__throw_out_of_range() при выходе за размеры массива
+        \throw std::out_of_range() при выходе за размеры массива
     */
-    Point& operator [] (int i){
+    Point& Polyhedron::operator [] (int i){
         if(i >= n)
-            throw std::__throw_out_of_range();
+            throw std::out_of_range("Range out of index");
         return vertices[i];
     }
 
@@ -174,11 +155,11 @@ public:
         Перегрузка оператора копирующего присваивания '='
         \param p многогранник, из которого копируются данные
     */
-    Polyhedron& operator = (const Polyhedron &p){
+    Polyhedron& Polyhedron::operator = (Polyhedron &p){
         delete[] vertices;
         n = p.getn();
         vertices = new Point[n];
-        std::copy(p.vertices.begin(),p.vertices.end() ,std::back_inserter(vertices));
+        std::copy(p.vertices, p.vertices + n ,vertices);
         return *this;
     }
 
@@ -186,7 +167,7 @@ public:
         Перегрузка оператора перемещающего присваивания '='
         \param p многогранник, из которого перемещаются данные
     */
-    Polyhedron& operator = (Polyhedron &&p){
+    Polyhedron& Polyhedron::operator = (Polyhedron &&p){
         delete[] vertices;
         n = p.getn();
         vertices = p.vertices;
@@ -199,18 +180,17 @@ public:
         Функция сдвига многогранника на вектор, построенный из центра координат в заданную точку
         \param p искомая точка
     */
-    void shift(const Point& p){
-        std::for_each(vertices.begin(), vertices.end(), [&](const Point &v){
+    void Polyhedron::shift(Point& p){
+        std::for_each(vertices, vertices + n, [&](Point &v){
             v = v + p;
         });
     }
 
-    ~Polyhedron(){
+    Polyhedron::~Polyhedron(){
         delete[] vertices;
         n = 0;
         vertices = NULL;
     }
-};
 
 /*!
     Перегрузка оператора << - вывод точек многогранника
@@ -219,7 +199,9 @@ public:
     \return Полученный выходной поток с выведенным многогранником
 */
 std::ostream& operator <<(std::ostream& stream, Polyhedron& p){
-    std::for_each(p.vertices.begin(), p.vertices.end(), [&](const Polyhedron& x){stream << x << std::endl;})
+    for(int i = 0; i < p.getn(); i++){
+        stream << p[i] << std::endl;
+    }
     return stream;
 }
 
@@ -230,22 +212,13 @@ std::ostream& operator <<(std::ostream& stream, Polyhedron& p){
     \return Полученный входной поток с введенным многогранником
 */
 std::istream& operator >>(std::istream& stream, Polyhedron& p){
-    int n;
+    int n = 0;
     stream >> n;
-    p.n = 0;
-    p.vertices = new Point[n];
+    Point *vert = new Point[n];
     for(int i = 0; i < n; i++){
-        Point a;
-        stream >> a;
-        if(find(p.vertices, p.n, a) == true) continue;
-        p.vertices[p.n] = a;
-        p.n++;
+        stream >> vert[i];
     }
-    if(p.n != 0){
-        Point *buff = new Point[p.n];
-        std::copy(p.vertices.begin(),p.vertices.end() ,std::back_inserter(buff));
-        delete[] p.vertices;
-        p.vertices = buff;
-    }
-    return stream
+    p = Polyhedron(n, vert);
+    delete[] vert;
+    return stream;
 }

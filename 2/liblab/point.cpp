@@ -7,58 +7,57 @@
 
 #include "point.h"
 
-/*!
-    Простой класс точки
-*/
-class Point{
-public:
+    Point::Point(){
+        x = 0;
+        y = 0;
+    };
     /*!
         Конструктор - создание экземпляра класса с инициализацией заданными координатами
         \param x первая координата
         \param y вторая координата
     */
-    Point(double nx = 0, double ny = 0):x(nx), y(ny){};
+    Point::Point(double nx = 0, double ny = 0):x(nx), y(ny){};
 
     /*!
         Конструктор - создание экземпляра класса с инициализацией заданным массивом координат
         \param cord массив состоящий из 2-х координат
     */
-    Point(double cord[2]):x(cord[0]), y(cord[1]){};
+    Point::Point(double cord[2]):x(cord[0]), y(cord[1]){};
 
     /*!
         Геттер - получение текущего значения поля x
     */
-    double getx(){return x;}
+    double Point::getx(){return x;}
 
     /*!
         Геттер - получение текущего значения поля y
     */
-    double gety(){return y;}
+    double Point::gety(){return y;}
 
     /*!
         Сеттер - установление нового значения для поля x
         \param nx новое значение для x
     */
-    void setx(const double nx){x = nx;}
+    void Point::setx(const double nx){x = nx;}
 
     /*!
         Сеттер - установление нового значения для поля x
         \param ny новое значение для y
     */
-    void sety(const double ny){y = ny;}
+    void Point::sety(const double ny){y = ny;}
 
     /*!
         Расстояние до точки - вычисление расстояния до заданной точки
         \param p точка, до которой вычисляется расстояние
     */
-    double dist(const Point &p){
+    double Point::dist(const Point &p){
         return std::sqrt(pow((x - p.x), 2) + pow((y - p.y), 2));
     }
 
     /*!
         Поворот - поворот точки относительно центра координат по часовой стрелке на 90 градусов
     */
-    void rotate(){
+    void Point::rotate(){
         if(x * y > 0){
             y *= -1;
         }
@@ -73,7 +72,7 @@ public:
         \param p точка
         \return Результат в виде новой точки
     */
-    Point operator + (const Point& p) const{
+    Point Point::operator + (const Point& p) const{
         return Point{x + p.x, y + p.y};
     }
 
@@ -82,7 +81,7 @@ public:
         \param p точка
         \return Результат в виде новой точки
     */
-    Point operator - (const Point& p) const{
+    Point Point::operator - (const Point& p) const{
         return Point{x - p.x, y - p.y};
     }
 
@@ -92,9 +91,9 @@ public:
         \return Результат в виде новой точки
         \throw std::invalid_argument при делении на 0
     */
-    Point operator / (const int d) const{
+    Point Point::operator / (int d) const{
         if(d == 0)
-            throw std::invalid_argument();
+            throw std::invalid_argument("");
         return Point{x / d, y / d};
     }
 
@@ -102,7 +101,7 @@ public:
         Перегрузка оператора копирующего присваивания '='
         \param right точка, из которого копируются данные
     */
-    Point& operator = (const Point& right) {
+    Point& Point::operator = (const Point& right) {
         if (this == &right) {return *this;}
         x = right.x;
         y = right.y;
@@ -113,10 +112,9 @@ public:
         Перегрузка оператора '==' - покоординатное сравнение двух точек
         \param right точка, с которой сравнивать
     */
-    bool operator ==(const Point &right) {
+    bool Point::operator ==(Point &right) {
         return (x == right.getx() && y == right.gety());
     }
-};
 
 /*!
     Перегрузка оператора << - вывод точки в выходной поток

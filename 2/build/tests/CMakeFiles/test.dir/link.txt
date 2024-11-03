@@ -1,0 +1,1 @@
+/usr/bin/c++    --coverage CMakeFiles/test.dir/tests.cpp.o  -o test  ../liblab/libpoint.a ../liblab/libpolyhedron.a /usr/local/lib/libCatch2Main.a /usr/local/lib/libCatch2.a 

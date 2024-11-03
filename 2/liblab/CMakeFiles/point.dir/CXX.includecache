@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/Labs/2/liblab/point.cpp
+point.h
+/workspaces/Labs/2/liblab/point.h
+
+/workspaces/Labs/2/liblab/point.h
+iostream
+-
+algorithm
+-
+cmath
+-
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpolyhedron.a  CMakeFiles/polyhedron.dir/polyhedron.cpp.o CMakeFiles/polyhedron.dir/point.cpp.o
+/usr/bin/ranlib libpolyhedron.a

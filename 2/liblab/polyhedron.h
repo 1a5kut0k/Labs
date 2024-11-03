@@ -9,17 +9,17 @@ private:
     Point *vertices;
 public:
     Polyhedron(Point &p);
-    Polyhedron(int n, const Point *vert);
-    Polyhedron(const Polyhedron &p);
+    Polyhedron(int n, Point *vert);
+    Polyhedron(Polyhedron &p);
     Polyhedron(Polyhedron &&p);
     int getn();
     Point center();
     void rotate(const Point& o, int phi);
-    Polyhedron& operator += (const Point& p);
+    Polyhedron& operator += (Point& p);
     Point& operator [] (int i);
-    Polyhedron& operator = (const Polyhedron &p);
+    Polyhedron& operator = (Polyhedron &p);
     Polyhedron& operator = (Polyhedron &&p);
-    void shift(const Point& a);
+    void shift(Point& a);
     ~Polyhedron();
 };
 std::ostream& operator <<(std::ostream& stream, Polyhedron& p);

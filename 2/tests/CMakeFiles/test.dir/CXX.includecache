@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/Labs/2/liblab/point.h
+iostream
+-
+algorithm
+-
+cmath
+-
+
+/workspaces/Labs/2/liblab/polyhedron.h
+iostream
+-
+algorithm
+-
+cmath
+-
+point.h
+/workspaces/Labs/2/liblab/point.h
+
+/workspaces/Labs/2/tests/tests.cpp
+catch2/catch_all.hpp
+-
+../liblab/polyhedron.h
+/workspaces/Labs/2/liblab/polyhedron.h
+

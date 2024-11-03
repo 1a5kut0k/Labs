@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic --coverage CMakeFiles/test.dir/tests.o  -o test   -L/usr/local/lib  -lpoint -lpolyhedron /usr/local/lib/libCatch2Main.a /usr/local/lib/libCatch2.a 
