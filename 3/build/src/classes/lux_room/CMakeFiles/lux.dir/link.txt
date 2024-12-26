@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblux.a  CMakeFiles/lux.dir/lux_room.cpp.o
+/usr/bin/ranlib liblux.a

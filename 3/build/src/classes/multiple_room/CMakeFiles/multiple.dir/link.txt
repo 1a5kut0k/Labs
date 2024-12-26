@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmultiple.a  CMakeFiles/multiple.dir/multiple_room.cpp.o
+/usr/bin/ranlib libmultiple.a

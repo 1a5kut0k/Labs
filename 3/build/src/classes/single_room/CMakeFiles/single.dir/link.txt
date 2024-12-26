@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsingle.a  CMakeFiles/single.dir/single_room.cpp.o
+/usr/bin/ranlib libsingle.a

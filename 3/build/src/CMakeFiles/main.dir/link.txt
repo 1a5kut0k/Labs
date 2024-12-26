@@ -1,0 +1,1 @@
+/usr/bin/c++    --coverage CMakeFiles/main.dir/main.cpp.o  -o main  application/libapp.a interface/libinterface.a classes/lux_room/liblux.a classes/single_room/libsingle.a classes/multiple_room/libmultiple.a 

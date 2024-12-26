@@ -1,0 +1,3 @@
+add_subdirectory(lux_room)
+add_subdirectory(single_room)
+add_subdirectory(multiple_room)

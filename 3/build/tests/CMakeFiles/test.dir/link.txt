@@ -1,0 +1,1 @@
+/usr/bin/c++    --coverage CMakeFiles/test.dir/tests.cpp.o  -o test  ../src/classes/single_room/libsingle.a ../src/classes/lux_room/liblux.a ../src/classes/multiple_room/libmultiple.a /usr/local/lib/libCatch2Main.a /usr/local/lib/libCatch2.a 
