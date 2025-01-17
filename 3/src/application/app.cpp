@@ -31,7 +31,7 @@ int App::search(int i){
     \param tar Суточный тариф номера
     \param rooms Количество комнат в номере (используется только для многоместных и люкс номеров)
 */
-void App::create(RType t, int tar, int rooms = 2){
+void App::create(RType t, int tar, int rooms){
     switch(t){
         case RType::Single:
             this->data.add(new Single_room(tar));
@@ -74,7 +74,7 @@ void App::info(){
     \param st_time Дни проживания
     \param g_n Количество гостей (только для номеров типа люкс)
 */
-void App::take(RType t, int day = 1, int month = 0, int year = 1900, int st_time = 0, int g_n = -1){
+void App::take(RType t, int day, int month, int year, int st_time, int g_n){
     for(int i = 0; i < this->data.size(); i++){
         if((this->data[i].ptr->type() == t) && (this->data[i].ptr->state() == false)){
             this->data[i].ptr->take(day, month, year, st_time, g_n);
@@ -89,7 +89,7 @@ void App::take(RType t, int day = 1, int month = 0, int year = 1900, int st_time
     \param j Индекс посетителя в многоместном номере (только для номеров многоместного типа)
     \return Возвращает плату за проживание
 */
-int App::release(int i, int j = -1){
+int App::release(int i, int j){
     int pos = search(i);
     if(pos == -1) return 0;
     int tar = this->data[pos].ptr->get_tariff();
@@ -100,20 +100,15 @@ int App::release(int i, int j = -1){
 
 void App::busy_async(RType t, std::promise<int> f, std::promise<int> s){
     int n = this->data.size();
-    int free_rooms = 0;
+    int taked_rooms = 0;
     int rooms_n = 0;
     for(int i = 0; i < n; i++){
         if(this->data[i].ptr->type() == t){
-            rooms_n++;
-            if(this->data[i].ptr->state() == false){
-                if(t == RType::Multiple)
-                    free_rooms += (this->data[i].ptr->get_rooms() - this->data[i].ptr->get_taked_rooms());
-                else
-                    free_rooms++;
-            }
+            taked_rooms += this->data[i].ptr->get_taked_rooms();
+            rooms_n += this->data[i].ptr->get_rooms();
         }
     }
-    f.set_value(free_rooms);
+    f.set_value(taked_rooms);
     s.set_value(rooms_n);
 }
 
@@ -131,24 +126,36 @@ Row<Premises> App::operator [] (int i){
 */
 double App::busy(){
     std::promise<int> size_single_promise, size_lux_promise, size_multiple_promise;
-    std::promise<int> free_single_promise, free_lux_promise, free_multiple_promise;
+    std::promise<int> taked_single_promise, taked_lux_promise, taked_multiple_promise;
     auto size_single = size_single_promise.get_future();
     auto size_lux = size_lux_promise.get_future();
     auto size_multiple = size_multiple_promise.get_future();
-    auto free_single = free_single_promise.get_future();
-    auto free_lux = free_lux_promise.get_future();
-    auto free_multiple = free_multiple_promise.get_future();
+    auto taked_single = taked_single_promise.get_future();
+    auto taked_lux = taked_lux_promise.get_future();
+    auto taked_multiple = taked_multiple_promise.get_future();
 
-    std::thread single_th(&App::busy_async, this, RType::Single, free_single_promise, size_single_promise);
-    std::thread lux_th(&App::busy_async, RType::Lux, std::move(free_lux_promise), std::move(size_lux_promise));
-    std::thread multiple_th(&App::busy_async, RType::Multiple, std::move(free_multiple_promise), std::move(size_multiple_promise));
+    std::thread single_th(&App::busy_async, this, RType::Single, std::move(taked_single_promise), std::move(size_single_promise));
+    std::thread lux_th(&App::busy_async, this, RType::Lux, std::move(taked_lux_promise), std::move(size_lux_promise));
+    std::thread multiple_th(&App::busy_async, this, RType::Multiple, std::move(taked_multiple_promise), std::move(size_multiple_promise));
 
     int size = size_single.get() + size_lux.get() + size_multiple.get();
-    int free_rooms = free_single.get() + free_lux.get() + free_multiple.get();
+    int taked = taked_single.get() + taked_lux.get() + taked_multiple.get();
     
     single_th.join();
     lux_th.join();
     multiple_th.join();
     if(size == 0) return 0;
-    return (1 - free_rooms / size);
+    return (taked / size);
+}
+
+double App::busy_sync(){
+    int n = this->data.size();
+    int taked_rooms = 0;
+    int rooms = 0;
+    for(int i = 0; i < n; i++){
+        taked_rooms += this->data[i].ptr->get_taked_rooms();
+        rooms += this->data[i].ptr->get_rooms();
+    }
+    if(rooms == 0) return 0;
+    return (taked_rooms / rooms);
 }

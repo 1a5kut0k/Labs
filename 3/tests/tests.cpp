@@ -20,7 +20,7 @@ TEST_CASE("Single") {
         REQUIRE(a1.get_rooms() == 1);
         REQUIRE(a1.get_taked_rooms() == 1);
         REQUIRE(a1.state() == 1);
-        REQUIRE(a1.type == RType::Single);
+        REQUIRE(a1.type() == RType::Single);
         a1.release();
         REQUIRE(a1.state() == 0);
     }
@@ -41,7 +41,7 @@ TEST_CASE("Multiple") {
         REQUIRE(a1.get_stay_time() == 1);
         REQUIRE(a1.get_taked_rooms() == 1);
         REQUIRE(a1.state() == 0);
-        REQUIRE(a1.type == RType::Multiple);
+        REQUIRE(a1.type() == RType::Multiple);
         a1.release();
         REQUIRE(a1.state() == 0);
     }
@@ -49,20 +49,20 @@ TEST_CASE("Multiple") {
 
 TEST_CASE("Lux") {
     SECTION("Constructor") {
-        Single_room a1;
-        Single_room a2(-1, 3);
+        Lux_room a1;
+        Lux_room a2(-1, 3);
         REQUIRE(a1.get_tariff() == 0);
         REQUIRE(a1.get_rooms() == 2);
         REQUIRE(a2.get_tariff() == 0);
         REQUIRE(a2.get_rooms() == 3);
     }
     SECTION("Methods"){
-        Single_room a1(1);
+        Lux_room a1(1);
         a1.take();
         REQUIRE(a1.get_stay_time() == 1);
-        REQUIRE(a1.get_taked_rooms() == 1);
+        REQUIRE(a1.get_taked_rooms() == 2);
         REQUIRE(a1.state() == 1);
-        REQUIRE(a1.type == RType::Lux);
+        REQUIRE(a1.type() == RType::Lux);
         a1.release();
         REQUIRE(a1.state() == 0);
     }

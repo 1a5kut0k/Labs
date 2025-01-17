@@ -1,3 +1,6 @@
+#ifndef SINGLE
+#define SINGLE
+
 #include "../premises/premises.h"
 #include <ctime>
 
@@ -19,4 +22,6 @@ public:
     RType type();
 };
 
-std::ostream& operator<< (std::ostream&, const Premises &);
+std::ostream& operator<< (std::ostream&, Premises &);
+
+#endif

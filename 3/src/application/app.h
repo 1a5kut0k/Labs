@@ -4,6 +4,8 @@
 #include "../classes/table/table.h"
 #include "../classes/premises/premises.h"
 #include <future>
+#include <thread>
+#include <pthread.h>
 
 class App{
 private:
@@ -12,11 +14,12 @@ private:
 public:
     int search(int);
     App(){data = Table <Premises>();}
-    void take(RType, int, int, int, int, int);
-    int release(int, int);
+    void take(RType, int = 1, int = 0, int = 1900, int = 0, int = -1);
+    int release(int, int = -1);
     void info();
     void show();
     double busy();
-    void create(RType, int, int);
+    double busy_sync();
+    void create(RType, int, int = 2);
     Row<Premises> operator [] (int);
 };

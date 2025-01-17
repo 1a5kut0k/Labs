@@ -4,7 +4,6 @@
 
     Данный файл содержит в себе реализацию методов класса Lux_room (Номер люкс)
 */
-
 #include "lux_room.h"
 
 /*!
@@ -12,8 +11,9 @@
     \param tar Суточный тариф проживания
     \param r_n Количество комнат
 */
-Lux_room::Lux_room(int tar = 0, int r_n = 2):busy{false}, stay_time{0}, rooms_n{r_n}{
+Lux_room::Lux_room(int tar, int r_n):stay_time{0}, rooms_n{r_n}{
     tariff = tar > 0 ? tar : 0;
+    busy = false;
 }
 
 /*!
@@ -25,14 +25,14 @@ Lux_room::Lux_room(int tar = 0, int r_n = 2):busy{false}, stay_time{0}, rooms_n{
     \param st_time Дни проживания
     \param g_n Количество гостей
 */
-void Lux_room::take(int day = 1, int month = 0, int year = 1900, int st_time = 0, int g_n = 1){
+void Lux_room::take(int day, int month, int year, int st_time, int g_n){
     if(busy == false){
         busy = true;
-        date.mday = day;
-        date.mon = month;
-        date.year = year - 1900;
+        date.tm_mday = day;
+        date.tm_mon = month;
+        date.tm_year = year - 1900;
         stay_time = st_time < 1 ? 1 : st_time;
-        guests_n = g_n > 2 : 2 ? 1;
+        guests_n = g_n > 2 ? 2 : 1;
     }
 }
 
@@ -52,7 +52,7 @@ int Lux_room::get_rooms(){return rooms_n;}
     Геттер занятых комнат
     \return Возвращает количество занятых комнат
 */
-int Lux_room::get_taked_rooms(return busy == 1 ? rooms_n : 0);
+int Lux_room::get_taked_rooms(){return busy == 1 ? rooms_n : 0;}
 
 /*!
     Геттер дней проживания
@@ -63,13 +63,13 @@ int Lux_room::get_stay_time(int num){return stay_time;}
 /*!
     Освободить номер
 */
-void Lux_room::release(int null = 0){
+void Lux_room::release(int null){
     if(busy == true){
         busy = false;
         tariff = 0;
-        date.mday = 1;
-        date.mon = 0;
-        date.year = 0;
+        date.tm_mday = 1;
+        date.tm_mon = 0;
+        date.tm_year = 0;
         stay_time = 0;
         guests_n = 0;
     }
@@ -89,9 +89,9 @@ bool Lux_room::state(){
 */
 std::string Lux_room::info(){
     if(busy == 0){
-        return std::string("busy: 0\n");
+        return std::string("Lux busy: 0\n");
     }
-    return format("Lux busy: 1, {}.{}.{}, stay time: {}, tariff: {} guests: {}\n", date.mday, date.mon + 1, date.year + 1900, stay_time, tariff);
+    return std::format("Lux busy: 1, {}.{}.{}, stay time: {}, tariff: {} guests: {}\n", date.tm_mday, date.tm_mon + 1, date.tm_year + 1900, stay_time, tariff, guests_n);
 }
 
 /*!
@@ -100,11 +100,4 @@ std::string Lux_room::info(){
 */
 RType Lux_room::type(){
     return RType::Lux;
-}
-
-/*!
-    Перегрузка оператора вывода (<<)
-*/
-std::ostream& operator << (std::ostream &os, const Premises &r){
-    return os << r.info();
 }

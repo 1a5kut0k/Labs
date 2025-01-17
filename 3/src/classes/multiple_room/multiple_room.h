@@ -1,3 +1,6 @@
+#ifndef MULTIPLE
+#define MULTIPLE
+
 #include "../premises/premises.h"
 #include <ctime>
 #include <vector>
@@ -22,4 +25,6 @@ public:
     RType type();
 };
 
-std::ostream& operator<< (std::ostream&, const Premises &);
+std::ostream& operator<< (std::ostream&, Premises &);
+
+#endif

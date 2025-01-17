@@ -114,7 +114,7 @@ void Interface::menu(){
                 app.info();
                 break;
             case 6:
-                std::cout<<app.busy();
+                std::cout<<app.busy()<<std::endl;
                 break;
         }
     }

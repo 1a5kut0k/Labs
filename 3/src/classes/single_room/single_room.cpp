@@ -11,8 +11,9 @@
     Конструктор
     \param tar Суточный тариф проживания
 */
-Single_room::Single_room(int tar = 0):busy{false}, stay_time{0}{
+Single_room::Single_room(int tar):stay_time{0}{
     tariff = tar < 0 ? 0 : tar;
+    busy = false;
 }
 
 /*!
@@ -23,12 +24,12 @@ Single_room::Single_room(int tar = 0):busy{false}, stay_time{0}{
     \param year Год заселения
     \param st_time Дни проживания
 */
-void Single_room::take(int day = 1, int month = 0, int year = 1900, int st_time = 0, int null = 1){
+void Single_room::take(int day, int month, int year, int st_time, int null){
     if(busy == false){
         busy = true;
-        date.mday = day;
-        date.mon = month;
-        date.year = year - 1900;
+        date.tm_mday = day;
+        date.tm_mon = month;
+        date.tm_year = year - 1900;
         stay_time = st_time > 0 ? st_time : 1;
     }
 }
@@ -48,13 +49,13 @@ int Single_room::get_stay_time(int num){return stay_time;}
 /*!
     Освободить номер
 */
-void Single_room::release(int null = 0){
+void Single_room::release(int null){
     if(busy == true){
         busy = false;
         tariff = 0;
-        date.mday = 1;
-        date.mon = 0;
-        date.year = 0;
+        date.tm_mday = 1;
+        date.tm_mon = 0;
+        date.tm_year = 0;
         stay_time = 0;
     }
 }
@@ -79,7 +80,7 @@ std::string Single_room::info(){
     if(busy == 0){
         return std::string("Single busy: 0\n");
     }
-    return format("Single busy: 1\nday: {}\nmonth: {}\nyear: {}\nstay time: {}\ntariff: {}\n", date.mday, date.mon + 1, date.year + 1900, stay_time, tariff);
+    return std::format("Single busy: 1\nday: {}\nmonth: {}\nyear: {}\nstay time: {}\ntariff: {}\n", date.tm_mday, date.tm_mon + 1, date.tm_year + 1900, stay_time, tariff);
 }
 
 /*!
@@ -101,6 +102,6 @@ RType Single_room::type(){
 /*!
     Перегрузка оператора вывода (<<)
 */
-std::ostream& operator << (std::ostream &os, const Premises &r){
+std::ostream& operator << (std::ostream &os, Premises &r){
     return os << r.info();
 }
